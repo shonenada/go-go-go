@@ -5,6 +5,10 @@ import "fmt"
 // map 就是 Python 中 dict 的概念
 // 声明 var variable map[key-type] value-type
 
+type Vertex struct {
+	X, Y int
+}
+
 func main() {
 	// var fake_numbers map[string]int
 	// fake_numbers["one"] = 1
@@ -54,5 +58,21 @@ func main() {
 	fmt.Println("length:", len(OfficialURL)) // length: 3
 	delete(OfficialURL, "Ruby")
 	fmt.Println("length:", len(OfficialURL)) // length: 2
+
+	// 结构
+	var smap = map[string]Vertex{
+		"first":  Vertex{1, 2},
+		"second": Vertex{2, 4},
+	}
+	// 结构可以简单声明
+	ssmap := map[string]Vertex{
+		"first":  {1, 2},
+		"second": {2, 4},
+	}
+
+	fmt.Println(smap)
+	// map[first:{1, 2} second:{2, 4}]
+	fmt.Println(ssmap)
+	// map[first:{1, 2} second:{2, 4}]
 
 }
